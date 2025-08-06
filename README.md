@@ -210,7 +210,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 **Ahmed Aydın**
 - GitHub: [@ahmtydn](https://github.com/ahmtydn)
-- Email: ahmtydn@example.com
 
 ## 🙏 Acknowledgments
 
