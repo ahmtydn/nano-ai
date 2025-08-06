@@ -261,7 +261,7 @@ export default function QuizResults({ results, quiz }) {
                 onClick={() => {
                   // Get the last session ID from localStorage or create a new one
                   const lastSessionId = localStorage.getItem('lastStudySessionId') || 'new';
-                  router.push(`/home/NanoAI/${lastSessionId}`);
+                  router.push(`/home/studybuddy/${lastSessionId}`);
                 }}
                 className="bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 text-white font-semibold py-2 sm:py-3 px-6 sm:px-8 rounded-lg shadow-lg text-sm sm:text-base transition-colors"
               >

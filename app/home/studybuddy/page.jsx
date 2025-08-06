@@ -74,7 +74,7 @@ export default function NanoAIHome() {
     if (!user) return;
     try {
       const sessionId = await createSession({ username: user.username, title: 'New Study Session' });
-      router.push(`/home/NanoAI/${sessionId}`);
+      router.push(`/home/studybuddy/${sessionId}`);
     } catch (error) {
       console.error('Failed to create new chat:', error);
     }
@@ -84,7 +84,7 @@ export default function NanoAIHome() {
     if (!user) return;
     try {
       const sessionId = await createSession({ username: user.username, title });
-      router.push(`/home/NanoAI/${sessionId}?prompt=${encodeURIComponent(prompt)}`);
+      router.push(`/home/studybuddy/${sessionId}?prompt=${encodeURIComponent(prompt)}`);
     } catch (error) {
       console.error('Failed to create new chat:', error);
     }

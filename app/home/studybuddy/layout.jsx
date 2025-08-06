@@ -31,8 +31,7 @@ export default function NanoAILayout({ children, params }) {
   const router = useRouter();
   const pathname = usePathname();
 
-  // Check if we're in a chat session (hide navbar)
-  const isInChatSession = pathname.includes('/NanoAI/') && pathname !== '/home/NanoAI';
+
 
   const sessions = useQuery(api.chat.getUserSessions, user ? { username: user.username } : "skip");
   const createSession = useMutation(api.chat.createSession);
@@ -72,7 +71,7 @@ export default function NanoAILayout({ children, params }) {
     if (!user) return;
     try {
       const sessionId = await createSession({ username: user.username, title: 'New Study Session' });
-      router.push(`/home/NanoAI/${sessionId}`);
+      router.push(`/home/studybuddy/${sessionId}`);
     } catch (error) {
       console.error('Failed to create new chat:', error);
     }
@@ -121,7 +120,7 @@ export default function NanoAILayout({ children, params }) {
   const handleShareSession = async (sessionId, e) => {
     e.stopPropagation();
     try {
-      const chatLink = `${window.location.origin}/home/NanoAI/${sessionId}`;
+      const chatLink = `${window.location.origin}/home/studybuddy/${sessionId}`;
       
       // Try native Web Share API first
       if (navigator.share) {
@@ -138,7 +137,7 @@ export default function NanoAILayout({ children, params }) {
     } catch (error) {
       console.error('Failed to share link:', error);
       // Fallback for browsers that don't support clipboard API
-      const chatLink = `${window.location.origin}/home/NanoAI/${sessionId}`;
+      const chatLink = `${window.location.origin}/home/studybuddy/${sessionId}`;
       const textArea = document.createElement('textarea');
       textArea.value = chatLink;
       document.body.appendChild(textArea);
@@ -360,7 +359,7 @@ export default function NanoAILayout({ children, params }) {
                               ? 'hover:bg-gray-800/30 border-gray-800/20 hover:border-gray-700/30' 
                               : 'hover:bg-gray-100/30 border-gray-100/20 hover:border-gray-200/30'
                         }`}
-                        onClick={() => router.push(`/home/NanoAI/${session.sessionId}`)}
+                        onClick={() => router.push(`/home/studybuddy/${session.sessionId}`)}
                       >
                         <div className="flex items-start justify-between">
                           <div className="flex-1 min-w-0 pr-2">
@@ -481,7 +480,7 @@ export default function NanoAILayout({ children, params }) {
                     filteredSessions.slice(0, 8).map((session) => (
                     <div
                       key={session._id}
-                      onClick={() => router.push(`/home/NanoAI/${session.sessionId}`)}
+                      onClick={() => router.push(`/home/studybuddy/${session.sessionId}`)}
                       className={`p-3 rounded-xl cursor-pointer transition-all backdrop-blur-sm hover:scale-110 ${
                         pathname.includes(session.sessionId)
                           ? theme === 'dark' ? 'bg-blue-900/50 shadow-lg' : 'bg-blue-50/50 shadow-lg'
