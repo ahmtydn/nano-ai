@@ -83,7 +83,7 @@ export default function NanoAILayout({ children, params }) {
     try {
       await deleteSession({ sessionId, username: user.username });
       if (pathname.includes(sessionId)) {
-        router.push('/home/NanoAI');
+        router.push('/home/studybuddy');
       }
     } catch (error) {
       console.error('Failed to delete session:', error);

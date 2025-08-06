@@ -102,7 +102,7 @@ const EnhancedChatInput = ({
   const initializeVoiceConnection = async () => {
     try {
       // Initialize WebSocket server
-      await fetch('/api/NanoAI-voice-live?action=init_websocket');
+      await fetch('/api/studybuddy-voice-live?action=init_websocket');
       
       // Connect to WebSocket
       wsRef.current = new WebSocket('ws://localhost:8080');

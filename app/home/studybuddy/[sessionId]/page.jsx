@@ -250,7 +250,7 @@ export default function NanoAISession({ params: paramsPromise }) {
       let response;
       
       // Choose API endpoint based on multi-agent mode
-      const apiEndpoint = multiAgentMode ? '/api/NanoAI-agents' : '/api/NanoAI';
+      const apiEndpoint = multiAgentMode ? '/api/studybuddy-agents' : '/api/studybuddy';
 
       if (currentFile && currentFile.isKnowledgeNestFile) {
         // Handle Knowledge Nest files with JSON
@@ -357,7 +357,7 @@ export default function NanoAISession({ params: paramsPromise }) {
           formData.append('username', user.username);
           formData.append('multiAgentMode', multiAgentMode.toString());
           
-          const apiEndpoint = multiAgentMode ? '/api/NanoAI-agents' : '/api/NanoAI';
+          const apiEndpoint = multiAgentMode ? '/api/studybuddy-agents' : '/api/studybuddy';
           
           const response = await fetch(apiEndpoint, {
             method: 'POST',
@@ -514,7 +514,7 @@ export default function NanoAISession({ params: paramsPromise }) {
       formData.append('sessionId', sessionId);
       formData.append('username', user.username);
 
-      const response = await fetch('/api/NanoAI', {
+      const response = await fetch('/api/studybuddy', {
         method: 'POST',
         body: formData,
       });
@@ -638,7 +638,7 @@ export default function NanoAISession({ params: paramsPromise }) {
       showScrollDown={showScrollDown}
       onScrollToBottom={scrollToLastAIMessage}
       isMobile={isMobile}
-      onBackClick={() => router.push('/home/NanoAI')}
+      onBackClick={() => router.push('/home/studybuddy')}
     >
       <MessagesContainer
         messagesContainerRef={messagesContainerRef}

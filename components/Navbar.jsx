@@ -244,7 +244,7 @@ export default function Navbar() {
   }, [isProfileDropdownOpen, isMenuOpen]);
   
   // Hide navbar on NanoAI pages - MOVED AFTER ALL HOOKS
-  if (pathname && pathname.includes('/NanoAI')) {
+  if (pathname && pathname.includes('/studybuddy')) {
     return null;
   }
   
