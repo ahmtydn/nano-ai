@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 import { ConvexHttpClient } from "convex/browser";
 import { api } from "@/convex/_generated/api";
 
@@ -10,7 +10,7 @@ export async function POST(request) {
 
     if (!email) {
       return NextResponse.json(
-        { success: false, message: 'Email is required' },
+        { success: false, message: "Email is required" },
         { status: 400 }
       );
     }
@@ -21,11 +21,10 @@ export async function POST(request) {
     });
 
     return NextResponse.json(result);
-
   } catch (error) {
-    console.error('Error checking user:', error);
+    console.error("Error checking user:", error);
     return NextResponse.json(
-      { success: false, message: 'Failed to check user' },
+      { success: false, message: "Failed to check user" },
       { status: 500 }
     );
   }

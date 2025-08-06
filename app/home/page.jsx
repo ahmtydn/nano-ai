@@ -297,7 +297,7 @@ export default function HomePage() {
 
   const features = [
     {
-      href: "/home/NanoAI",
+      href: "/home/studybuddy",
       icon: icons.Chat,
       title: "AI Study Assistant",
       description: "Get instant help with detailed explanations and guidance.",
