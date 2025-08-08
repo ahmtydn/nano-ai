@@ -4,6 +4,7 @@ import ConvexClientProvider from '@/components/ConvexClientProvider'
 import Navbar from '@/components/Navbar'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { Toaster, toast } from 'sonner'
+import { Analytics } from '@vercel/analytics/next'
 
 
 export const metadata = {
@@ -70,6 +71,7 @@ export default function RootLayout({ children }) {
             <Navbar />
             <main>{children}</main>
             <Toaster position="top-right" expand={true} richColors />
+            <Analytics />
           </ConvexClientProvider>
         </ThemeProvider>
       </body>
