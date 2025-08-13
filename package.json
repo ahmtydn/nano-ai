@@ -17,6 +17,7 @@
     "@rive-app/react-canvas": "^4.21.1",
     "@tanstack/react-table": "^8.21.3",
     "@vercel/analytics": "^1.5.0",
+    "@vercel/speed-insights": "^1.2.0",
     "chart.js": "^4.5.0",
     "chartjs-plugin-datalabels": "^2.2.0",
     "cheerio": "^1.1.0",

@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import { Toaster, toast } from 'sonner'
 import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 
 export const metadata = {
@@ -71,7 +72,8 @@ export default function RootLayout({ children }) {
             <Navbar />
             <main>{children}</main>
             <Toaster position="top-right" expand={true} richColors />
-            <Analytics />
+              <Analytics />
+              <SpeedInsights />
           </ConvexClientProvider>
         </ThemeProvider>
       </body>
